@@ -37,9 +37,11 @@ function App() {
     
   return (
     <div className="App">
+      <img src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100"/>
       <h1>hello</h1>
       <h2>Welcome {username}</h2>
-      <form>
+
+      <form className="app__form">
         <FormControl>
         <InputLabel >Enter a message...</InputLabel>
                <Input value={input} onChange={event => setInput(event.target.value)} />
@@ -50,7 +52,7 @@ function App() {
       <FlipMove>
       {
         messages.map(({id,message}) => (
-          <Message key= {id} username={username} message={message} />
+          <Message key={id} username={username} message={message} />
         ))
       }
       </FlipMove>
