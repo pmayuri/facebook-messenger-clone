@@ -2,19 +2,28 @@
   text-align: center;
 }
 
-.app__form {
-padding: 20px;
-position:fixed;
-bottom: 0;
-z-index: 1;
-background-color: #e9e9eb;
-width: 100%;
-margin: 20px;
+.app__body {
+display: flex;
+background-color: white;
+margin-top: -100px;
+height: 130vh;
+width: 100vw;
+
+
 }
+.app__form {
+  padding: 20px;
+  position:fixed;
+  bottom: 0;
+  z-index: 1;
+  background-color: #e9e9eb;
+  width: 100%;
+  margin: 20px;
+  }
 
 .app__formControl {
  display: flex !important;
-flex-direction: row !important  ;
+ flex-direction: row !important  ;
 }
 
 .app__input {

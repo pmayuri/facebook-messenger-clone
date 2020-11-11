@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, FormControl,InputLabel,Input } from '@material-ui/core';
 import './App.css';
+import Sidebar from './Sidebar';
 import Message from './Message';
 import db from './firebase';
 import firebase from 'firebase';
@@ -43,26 +44,27 @@ function App() {
       <img src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100"/>
       <h1>Hello</h1>
       <h2>Welcome {username}</h2>
-
+      <div className ="app__body"> 
+      <Sidebar/>
+      </div>
       <form className="app__form">
         <FormControl className="app__formControl">
-               <Input className="app__input" placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)} />
-      <IconButton className="app__iconButton" disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>
-       <SendIcon />
-       </IconButton>
-       </FormControl>
-     </form>
-
+          <Input className="app__input" placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)} />
+          <IconButton className="app__iconButton" disabled={!input} variant="contained" color="primary" type='submit' onClick={sendMessage}>
+            <SendIcon />
+          </IconButton>
+        </FormControl>
+      </form>
       <FlipMove>
-      {
-        messages.map(({id,message}) => (
-          <Message key={id} username={username} message={message} />
-        ))
-      }
+        {
+          messages.map(({ id, message }) => (
+            <Message key={id} username={username} message={message} />
+          ))
+        }
       </FlipMove>
-    </div>  
+    </div>
 
-  
+
   );
 }
 

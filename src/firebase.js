@@ -2,7 +2,7 @@ import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
   apiKey: "AIzaSyCQibbC59_RPoyaJJtluIJ-GaZGLoGwzTg",
   authDomain: "facebook-messenger-clone-a525b.firebaseapp.com",
@@ -17,4 +17,4 @@ const firebaseApp = firebase.initializeApp({
 
 const db = firebaseApp.firestore();
 
-export default db ;
+export default db;
