@@ -3,7 +3,7 @@ import React, {useEffect,useState} from 'react';
 import "./SidebarChat.css";
 
 
-function SidebarChat() {
+function SidebarChat({ addNewChat }) {
  const [seed,setSeed] = useState("");
 
 useEffect(() => {
@@ -11,8 +11,7 @@ useEffect(() => {
     }, []);
 
 
-
-    return (
+    return  (
         <div className="sidebarChat">
             <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
 <div className="sidebarChat__info">
@@ -20,7 +19,9 @@ useEffect(() => {
     <p>Last message...</p>
     </div>       
 </div>
-    )
+   
+   
+    );
 }
 
 export default SidebarChat ;

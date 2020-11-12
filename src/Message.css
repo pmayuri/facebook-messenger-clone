@@ -1,4 +1,5 @@
 .message {
+    flex: 0.75;
   padding: 10px;
   margin: 10px;
   width: fit-content;
