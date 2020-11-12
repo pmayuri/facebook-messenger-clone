@@ -41,9 +41,10 @@ function App() {
     
   return (
     <div className="App">
-      <img src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100"/>
-      <h1>Hello</h1>
-      <h2>Welcome {username}</h2>
+      <div className="chat__header">
+<h1>hello</h1>
+      <h2>{username}</h2>
+      </div>
       <div className ="app__body"> 
       <Sidebar/>
       </div>

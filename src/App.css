@@ -1,6 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  background-color: brown;
+  flex: 0.80;
 }
+ 
+ 
 
 .app__body {
 display: flex;

@@ -6,6 +6,7 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 import CreateIcon from '@material-ui/icons/Create';
 import { IconButton } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
+import SidebarChat from './SidebarChat';
 
 function Sidebar() {
     return (
@@ -36,8 +37,12 @@ function Sidebar() {
             </div>
            
             <div className="sidebar__chats">
+                <SidebarChat />
+ <SidebarChat />
+ <SidebarChat />
+ <SidebarChat />
 
-            </div>
+</div>
         </div>
     );
 }

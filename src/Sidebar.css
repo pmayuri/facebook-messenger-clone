@@ -50,3 +50,9 @@ margin-left: 5px ;
 .sidebar__headerRight > .MuiIconButton-root {
     color: black;
 }
+
+.sidebar__chats {
+background-color:white;
+flex: 1;
+overflow: scroll;
+}
