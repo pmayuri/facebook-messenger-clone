@@ -1,8 +1,8 @@
-.App {
+.app {
   text-align: center;
   display: flex;
-  background-color: brown;
-  flex: 0.80;
+  background-color:red;
+  flex: 0.20;
 }
  
  

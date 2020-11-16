@@ -1,7 +1,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    flex: 0.25;
+    flex: 0.20;
 
 }
  .sidebar__search {
@@ -45,6 +45,7 @@ margin-left: 5px ;
     align-items: center;
     justify-content: space-between;
     min-width: 0.2vw;
+    padding: 20px;
 }
 
 .sidebar__headerRight > .MuiIconButton-root {
