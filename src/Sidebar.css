@@ -1,4 +1,5 @@
 .sidebar {
+    
     display: flex;
     flex-direction: column;
     flex: 0.20;
@@ -17,7 +18,7 @@
     align-items: center;
     background-color: #f6f6f6;
     width: 100%;
-    height: 40px;
+    height: 50px;
 border-radius: 30px;}
 
 .sidebar__searchContainer > input {
@@ -29,7 +30,7 @@ margin-left:  2px; ;
 
 .sidebar__searchContainer > .MuiSvgIcon-root {
  color: gray;
-padding: 5px;
+padding: 6px;
 margin-left: 5px ;
 }
 
@@ -55,5 +56,4 @@ margin-left: 5px ;
 .sidebar__chats {
 background-color:white;
 flex: 1;
-overflow: scroll;
 }

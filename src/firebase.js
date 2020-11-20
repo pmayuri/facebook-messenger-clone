@@ -1,8 +1,7 @@
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 import firebase from "firebase";
 
-const firebaseApp = firebase.initializeApp({
-
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
 
   apiKey: "AIzaSyCQibbC59_RPoyaJJtluIJ-GaZGLoGwzTg",
   authDomain: "facebook-messenger-clone-a525b.firebaseapp.com",
@@ -12,9 +11,14 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: "84179737057",
   appId: "1:84179737057:web:592c71905efd67f7b81aa0",
   measurementId: "G-KTPWE4M7X3"
+};
+  
 
-});
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const db = firebaseApp.firestore();
+  const auth = firebase.auth();
 
-const db = firebaseApp.firestore();
+const provider = new firebase.auth.GoogleAuthProvider();
 
-export default db;
+  export { auth,provider };
+  export default db;

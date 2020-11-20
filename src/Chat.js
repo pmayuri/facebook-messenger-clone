@@ -12,18 +12,25 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 function Chat() {
+        const [input,setInput] = useState("");
+
     const [seed,setSeed] = useState("");
 
 useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
     }, []);
  
+ const sendMessage = (e) => {
+        e.preventDefault();
+        console.log("you typed >>>", input);
+
+        setInput("");
+    };
 
 
 
     return (
         <div className="chat">
-            <h1>Chat</h1>
 
 <div className="chat__header">
   <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
@@ -67,8 +74,12 @@ useEffect(() => {
                 <ImageIcon />
                 <InsertDriveFileIcon />
                 <form>
-                    <input type="text" />
-            <button>Send a message</button>
+                      <input                                                                                                                                                                                                                                                                                                                                 
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        placeholder="Type a message"
+                        type="text"
+                    />            <button onClick={sendMessage} type="submit">Send a message</button>
                 </form>
 
                 < InsertEmoticonIcon/>

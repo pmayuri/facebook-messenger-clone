@@ -52,7 +52,7 @@ background-color: blue;
     position: absolute;
     top: -15px;
     font-weight: 800;
-    font-size: xx-small;
+    font-size: 50px;
 }
 
 
@@ -75,27 +75,31 @@ padding: 30px;
 justify-content: space-between;
 align-items: center;
 height: 62px;
-border-top:  1px solid lightgray;
 }
 
 .chat__footer > form {
     flex: 1;
     display: flex;
+    background-color: cadetblue;
+    color: cadetblue;
+    border-radius: 30px;
 }
 
 .chat__footer > form > input {
  flex:1;
- border-radius: 30px;
+ border-radius: 40px;
  padding: 10px;
  border: none;
+ background-color: cadetblue;
 
 }
 
 .chat__footer > form > button {
     display: none;
+
 }
 
 .chat__footer > .MuiSvgIcon-root {
     padding: 10px;
-    color: gray;
+    color: rgb(20, 20, 209) !important;
 }

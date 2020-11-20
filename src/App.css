@@ -1,16 +1,11 @@
-.app {
-  text-align: center;
-  display: flex;
-  background-color:red;
-  flex: 0.20;
-}
+
  
  
 
 .app__body {
 display: flex;
 background-color: white;
-margin-top: -100px;
+margin-top: -10px;
 height: 130vh;
 width: 100vw;
 
