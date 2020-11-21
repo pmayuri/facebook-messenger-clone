@@ -13,7 +13,8 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import { useParams } from 'react-router-dom';
 import db from './firebase';
-
+import firebase from "firebase";
+import { useStateValue } from "./StateProvider";
 
 function Chat() {
     const [input,setInput] = useState("");
@@ -21,7 +22,6 @@ function Chat() {
     const { roomId } = useParams();
     const [roomName,setRoomName] = useState("");
 const [messages,setMessages] = useState([]);
-
 
 
 
@@ -47,7 +47,14 @@ useEffect(() => {
         e.preventDefault();
         console.log("you typed >>>", input);
 
-        setInput("");
+    db.collection("rooms").doc(roomId).collection
+    ("messages").add({
+    message:input,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+
+});
+
+    setInput("");
     };
 
 
