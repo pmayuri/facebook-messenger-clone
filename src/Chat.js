@@ -22,6 +22,7 @@ function Chat() {
     const { roomId } = useParams();
     const [roomName,setRoomName] = useState("");
 const [messages,setMessages] = useState([]);
+const [{ user }, dispatch ] = useStateValue ();
 
 
 
@@ -50,6 +51,7 @@ useEffect(() => {
     db.collection("rooms").doc(roomId).collection
     ("messages").add({
     message:input,
+    name:user.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 
 });
@@ -85,7 +87,7 @@ useEffect(() => {
             </div>
             <div className="chat__body">
                 {messages.map((message) => (
-                    <p className={`chat__message ${true && "chat__reciever"}`}>
+                    <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
          <span className="chat__name">{message.name}</span>
 
                         {message.message}
