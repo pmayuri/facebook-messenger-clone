@@ -97,7 +97,7 @@ useEffect(() => {
                          </span>
                     </p>
                 ))}
-</div>
+            </div>
 <div className="chat__footer">
                     <IconButton>
 
