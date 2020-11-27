@@ -1,5 +1,5 @@
 .chat  {
-    flex: 0.50;
+    flex: 0.80;
     display: flex;
     flex-direction: column;
 }
@@ -29,9 +29,9 @@ padding-left: 20px;
     position: relative;
 font-size: 16px;
 padding: 10px;
-border-radius: 10px;
+border-radius: 15px;
 width: fit-content;
-background-color:gray;
+background-color:#f1f1f4;;
 margin-bottom: 30px;
 }
 
@@ -43,7 +43,7 @@ background-color: blue;
 
 
 .chat__timestamp {
-    margin-left: 10px;
+    margin-left: 50px;
     font-size: xx-small;
 }
 
@@ -65,7 +65,7 @@ background-color: blue;
 }
 
 .chat__body {
-flex:1;
+flex:0.5;
 background-color: white;
 padding: 30px;
 }
@@ -75,14 +75,17 @@ padding: 30px;
 justify-content: space-between;
 align-items: center;
 height: 62px;
+margin-top: 450px;
+
 }
 
 .chat__footer > form {
     flex: 1;
     display: flex;
-    background-color: cadetblue;
-    color: cadetblue;
+    background-color: #f6f6f6;
+    color: #f6f6f6;
     border-radius: 30px;
+
 }
 
 .chat__footer > form > input {
@@ -90,16 +93,15 @@ height: 62px;
  border-radius: 40px;
  padding: 10px;
  border: none;
- background-color: cadetblue;
-
+ background-color: #f6f6f6;
+color: gray;
 }
 
 .chat__footer > form > button {
     display: none;
-
 }
 
-.chat__footer > .MuiSvgIcon-root {
+.chat__footer > .MuiIconButton-root {
     padding: 10px;
     color: rgb(20, 20, 209) !important;
 }

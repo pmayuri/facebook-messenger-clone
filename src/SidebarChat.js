@@ -41,7 +41,9 @@ if (roomName) {
                 <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
                 <div className="sidebarChat__info">
                     <h2>{name}</h2>
+                    <div className ="sidebarChat__text">
                     <p>{messages[0]?.message}</p>
+                    </div>
                 </div>
             </div>
 
@@ -50,7 +52,6 @@ if (roomName) {
     ) : (
             <div onClick={createChat}
                 className="sidebar">
-                <h2>Add new Chat</h2>
             </div>
         );
 }

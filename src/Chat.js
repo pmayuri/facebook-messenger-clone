@@ -88,7 +88,6 @@ useEffect(() => {
             <div className="chat__body">
                 {messages.map((message) => (
                     <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
-         <span className="chat__name">{message.name}</span>
 
                         {message.message}
 
@@ -100,12 +99,27 @@ useEffect(() => {
                 ))}
 </div>
 <div className="chat__footer">
+                    <IconButton>
 
                 <AddIcon />
+                                    </IconButton>
+                    <IconButton>
+
                 <GifIcon />
+                                    </IconButton>
+                    <IconButton>
+
                 <NoteAddIcon />
+                                    </IconButton>
+                    <IconButton>
+
                 <ImageIcon />
+                                    </IconButton>
+                    <IconButton>
+
                 <InsertDriveFileIcon />
+                                    </IconButton>
+
                 <form>
                       <input                                                                                                                                                                                                                                                                                                                                 
                         value={input}
@@ -114,9 +128,14 @@ useEffect(() => {
                         type="text"
                     />            <button onClick={sendMessage} type="submit">Send a message</button>
                 </form>
+                <IconButton>
+                    < InsertEmoticonIcon />
 
-                < InsertEmoticonIcon/>
-                <ThumbUpIcon />
+                </IconButton>
+                <IconButton>
+                    <ThumbUpIcon />
+                </IconButton>
+
             </div>
         </div>
     );
