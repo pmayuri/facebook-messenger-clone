@@ -53,7 +53,6 @@ useEffect(() => {
     message:input,
     name:user.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    id:Math.floor(Math.random()*(10000-1+1)+1)
 });
 
     setInput("");
@@ -95,22 +94,14 @@ useEffect(() => {
 
                         {message.message} {message.id} 
 
-                        {/* <span
-                            className="chat__timestamp">
-                                {new Date(message.timestamp?.toDate()).toUTCString()}
-                         </span> */}
                     </p>
                     <p>
-              { (message.id%3 === 0) && new Date(message.timestamp?.toDate()).toUTCString()}
-
-
-
-                        
-
-                        {/* <span
+                        <div className="time">
+                        <span
                             className="chat__timestamp">
                                 {new Date(message.timestamp?.toDate()).toUTCString()}
-                         </span> */}
+                         </span> 
+                         </div>
                     </p>
                                 </div>
 
