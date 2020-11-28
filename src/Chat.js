@@ -53,7 +53,7 @@ useEffect(() => {
     message:input,
     name:user.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-
+    id:Math.floor(Math.random()*(10000-1+1)+1)
 });
 
     setInput("");
@@ -85,19 +85,37 @@ useEffect(() => {
 
 
             </div>
-            <div className="chat__body">
-                {messages.map((message) => (
+
+
+                {
+                    messages.map((message) => (
+                                <div className="chat__body">
+
                     <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
 
-                        {message.message}
+                        {message.message} {message.id} 
 
-                        <span
+                        {/* <span
                             className="chat__timestamp">
                                 {new Date(message.timestamp?.toDate()).toUTCString()}
-                         </span>
+                         </span> */}
                     </p>
+                    <p>
+              { (message.id%3 === 0) && new Date(message.timestamp?.toDate()).toUTCString()}
+
+
+
+                        
+
+                        {/* <span
+                            className="chat__timestamp">
+                                {new Date(message.timestamp?.toDate()).toUTCString()}
+                         </span> */}
+                    </p>
+                                </div>
+
                 ))}
-            </div>
+
 <div className="chat__footer">
                     <IconButton>
 
