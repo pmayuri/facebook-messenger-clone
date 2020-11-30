@@ -30,6 +30,7 @@ return () => {
 
     return (
         <div className="sidebar">
+            
             <div className ="sidebar__header">
                 <h1>Chats</h1>
                 <div className="sidebar__headerRight">
