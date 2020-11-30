@@ -44,18 +44,15 @@ padding: 10px;
 border-radius: 9px;
 width: fit-content;
 background-color:#f1f1f4;;
-margin-bottom: 30px;
 
 }
 
 .chat__reciever {
-justify-content: end;
 margin-left: auto;
 background-color: #2d7cc1;
 color: white;
-padding-right: 10px;
 margin-right: 20px;
-    margin-top: 100px;
+    margin-top: 2px;
 }
 
 
