@@ -86,24 +86,21 @@ useEffect(() => {
             </div>
 
 
-                {
-                    messages.map((message) => (
-                                <div className="chat__body">
+            {
+                messages.map((message) => (
+                    <div className="chat__body">
+                   <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
+                            {message.message}
 
-                    <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
-
-                        {message.message} {message.id} 
-
-                    </p>
-                    <p>
-                        <div className="time">
-                        <span
-                            className="chat__timestamp">
+                        </p>
+                        <p>
+                            <span
+                                className="chat__timestamp">
                                 {new Date(message.timestamp?.toDate()).toUTCString()}
-                         </span> 
-                         </div>
-                    </p>
-                                </div>
+                            </span>
+
+                        </p>
+                    </div>
 
                 ))}
 
