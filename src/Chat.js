@@ -1,4 +1,4 @@
-import React ,{useEffect,useState}from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Chat.css"
 import CallIcon from '@material-ui/icons/Call';
 import VideocamIcon from '@material-ui/icons/Videocam';
@@ -17,45 +17,45 @@ import firebase from "firebase";
 import { useStateValue } from "./StateProvider";
 
 function Chat() {
-    const [input,setInput] = useState("");
-    const [seed,setSeed] = useState("");
+    const [input, setInput] = useState("");
+    const [seed, setSeed] = useState("");
     const { roomId } = useParams();
-    const [roomName,setRoomName] = useState("");
-const [messages,setMessages] = useState([]);
-const [{ user }, dispatch ] = useStateValue ();
+    const [roomName, setRoomName] = useState("");
+    const [messages, setMessages] = useState([]);
+    const [{ user }, dispatch] = useStateValue();
 
 
 
-useEffect(() => {
- if (roomId) {
-    db.collection("rooms")
-    .doc(roomId)
-     .onSnapshot((snapshot) => setRoomName
-     (snapshot.data().name));
+    useEffect(() => {
+        if (roomId) {
+            db.collection("rooms")
+                .doc(roomId)
+                .onSnapshot((snapshot) => setRoomName
+                    (snapshot.data().name));
 
-db.collection("rooms").doc(roomId).collection("messages").orderBy("timestamp", "asc").onSnapshot
-((snapshot) => 
-    setMessages(snapshot.docs.map((doc) => doc.data()))
-);
-}
-}, [roomId]);
+            db.collection("rooms").doc(roomId).collection("messages").orderBy("timestamp", "asc").onSnapshot
+                ((snapshot) =>
+                    setMessages(snapshot.docs.map((doc) => doc.data()))
+                );
+        }
+    }, [roomId]);
 
-useEffect(() => {
+    useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
     }, [roomId]);
- 
- const sendMessage = (e) => {
+
+    const sendMessage = (e) => {
         e.preventDefault();
         console.log("you typed >>>", input);
 
-    db.collection("rooms").doc(roomId).collection
-    ("messages").add({
-    message:input,
-    name:user.displayName,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-});
+        db.collection("rooms").doc(roomId).collection
+            ("messages").add({
+                message: input,
+                name: user.displayName,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            });
 
-    setInput("");
+        setInput("");
     };
 
 
@@ -63,35 +63,29 @@ useEffect(() => {
     return (
         <div className="chat">
 
-<div className="chat__header">
-  <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
+            <div className="chat__header">
+                <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
 
                 <div className="chat__headerInfo">
                     <h3>{roomName}</h3>
 
                 </div>
-<div className="chat__headerRight">
-<IconButton>
-                    <CallIcon />
-                 </IconButton>
-                 <IconButton>
-                    <VideocamIcon />
-                </IconButton>
-                <IconButton>
-                     <InfoIcon/>
-                </IconButton>
+                <div className="chat__headerRight">
+                    <IconButton>
+                        <CallIcon />
+                    </IconButton>
+                    <IconButton>
+                        <VideocamIcon />
+                    </IconButton>
+                    <IconButton>
+                        <InfoIcon />
+                    </IconButton>
                 </div>
-
-
             </div>
-
-
-
-
             {
                 messages.map((message) => (
                     <div className="chat__body">
-                   <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
+                        <p className={`chat__message ${message.name === user.displayName && "chat__reciever"}`}>
                             {message.message}
 
                         </p>
@@ -106,44 +100,37 @@ useEffect(() => {
 
                 ))}
 
-<div className="chat__footer">
-                    <IconButton>
-
-                <AddIcon />
-                                    </IconButton>
-                    <IconButton>
-
-                <GifIcon />
-                                    </IconButton>
-                    <IconButton>
-
-                <NoteAddIcon />
-                                    </IconButton>
-                    <IconButton>
-
-                <ImageIcon />
-                                    </IconButton>
-                    <IconButton>
-
-                <InsertDriveFileIcon />
-                                    </IconButton>
+            <div className="chat__footer">
+                <IconButton>
+                    <AddIcon />
+                </IconButton>
+                <IconButton>
+                    <GifIcon />
+                </IconButton>
+                <IconButton>
+                    <NoteAddIcon />
+                </IconButton>
+                <IconButton>
+                    <ImageIcon />
+                </IconButton>
+                <IconButton>
+                    <InsertDriveFileIcon />
+                </IconButton>
 
                 <form>
-                      <input                                                                                                                                                                                                                                                                                                                                 
+                    <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="Type a message"
-                        type="text"
-                    />            <button onClick={sendMessage} type="submit">Send a message</button>
+                        type="text" />
+                    <button onClick={sendMessage} type="submit">Send a message</button>
                 </form>
                 <IconButton>
-                    < InsertEmoticonIcon />
-
+                    <InsertEmoticonIcon />
                 </IconButton>
                 <IconButton>
                     <ThumbUpIcon />
                 </IconButton>
-
             </div>
         </div>
     );
